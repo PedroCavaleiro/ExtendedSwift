@@ -1,0 +1,15 @@
+{
+  "originHash" : "59a0645166e244d1d61b1d8f7a2c74fb70f359c15c184d7937fd5d45a86a3c1b",
+  "pins" : [
+    {
+      "identity" : "notifier",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PedroCavaleiro/Notifier",
+      "state" : {
+        "revision" : "1199d672ce1be0e291e318c247ded2dfef6d54ae",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}
