@@ -8,7 +8,7 @@
 import Foundation
 
 extension NumberFormatter {
-    static var decimalFormatter: NumberFormatter {
+    public static var decimalFormatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 3
