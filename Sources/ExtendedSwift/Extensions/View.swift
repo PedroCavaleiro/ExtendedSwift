@@ -151,7 +151,7 @@ extension View {
     }
     
     @available(iOS 15.0, *)
-    func offset(offset: Binding<CGFloat>) -> some View {
+    public func offset(offset: Binding<CGFloat>) -> some View {
         return self
             .overlay {
                 GeometryReader { proxy in
