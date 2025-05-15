@@ -9,7 +9,6 @@ let package = Package(
         .iOS(.v14),
         .tvOS(.v14),
         .macOS(.v11),
-        .visionOS(.v1),
         .watchOS(.v6)
     ],
     products: [
@@ -20,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/PedroCavaleiro/Notifier", from: "1.0.1"),
+        .package(url: "https://github.com/PedroCavaleiro/Notifier", .upToNextMajor(from: "1.1.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
