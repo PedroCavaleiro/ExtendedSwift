@@ -18,34 +18,20 @@ import CryptoKit
 @preconcurrency
 public func authenticateWithBiometrics(
     reason: String = "Authenticate to continue",
-    callback: @escaping (Bool) -> Void
+    callback: @Sendable @escaping (Bool) -> Void
 ) {
-    final class CallbackBox: @unchecked Sendable {
-        let callback: (Bool) -> Void
-        init(_ callback: @escaping (Bool) -> Void) {
-            self.callback = callback
-        }
-    }
-
-    let callbackBox = CallbackBox(callback)
     let context = LAContext()
     var error: NSError?
 
-    if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometricsOrCompanion, error: &error) {
-        context.evaluatePolicy(
-            .deviceOwnerAuthenticationWithBiometricsOrCompanion,
-            localizedReason: reason
-        ) { success, _ in
-            // This closure is @Sendable because it's defined by the system API
-            // We're capturing CallbackBox, which we mark as @unchecked Sendable
+    if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
             DispatchQueue.main.async {
-                callbackBox.callback(success)
+                callback(success)
             }
         }
     } else {
-        print(error?.localizedDescription ?? "Biometrics authentication not available")
         DispatchQueue.main.async {
-            callbackBox.callback(false)
+            callback(false)
         }
     }
 }
