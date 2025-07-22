@@ -7,8 +7,10 @@
 
 import Foundation
 
+/// An extension to the `Int` type
 extension Int {
     /// Formats a time in seconds into *hh:mm:ss*
+    /// - Returns: A string representing the time in the format *hh:mm:ss*.
     public func formatTimeFromSeconds() -> String {
         let totalSeconds = self / 1000
         let hours = totalSeconds / 3600

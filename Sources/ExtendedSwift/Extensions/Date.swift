@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An extension to the Date class
 extension Date {
     
     /// Gets the date as a RFC3339 String

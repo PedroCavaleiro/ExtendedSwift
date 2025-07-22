@@ -11,6 +11,9 @@ import MachO
 #if canImport(UIKit)
 import UIKit
 
+/// A helper class to detect if the device is jailbroken by checking for Cydia, suspicious apps, system paths, and dynamic libraries.
+/// It also checks if Frida is running, which is a common tool used in jailbroken devices.
+@available(iOS 13.0, *)
 internal struct JailBrokenHelper {
     
     /// Checks if Cydia is installed
@@ -53,9 +56,8 @@ internal struct JailBrokenHelper {
         }
     }
     
-    /**
-     Add more paths here to check for jail break
-     */
+    /// Add more paths here to check for jail break
+    /// - Returns: An array of suspicious app paths
     public static var suspiciousAppsPathToCheck: [String] {
         return ["/Applications/Cydia.app",
                 "/Applications/blackra1n.app",
@@ -69,6 +71,8 @@ internal struct JailBrokenHelper {
         ]
     }
     
+    /// Add more paths here to check for jail break
+    /// - Returns: An array of suspicious system paths
     public static var suspiciousSystemPathsToCheck: [String] {
         return ["/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
                 "/Library/MobileSubstrate/DynamicLibraries/Veency.plist",

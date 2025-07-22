@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+/// A view that iterates over a collection and provides both the index and the element to the content closure.
+/// - Parameters:
+///   - data: The collection to iterate over.
+///   - id: A key path to the unique identifier for each element in the collection.
+///   - content: A closure that takes the index and the element and returns a view.
 @available(iOS 13.0, *)
 @available(macOS 10.15, *)
 public struct ForEachWithIndex<Data: RandomAccessCollection, ID: Hashable, Content: View>: View {

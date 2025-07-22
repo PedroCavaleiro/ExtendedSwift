@@ -12,6 +12,7 @@ import Combine
 import UIKit
 #endif
 
+/// A collection of Combine publishers that extend functionality
 @available(macOS 10.15, *)
 @available(iOS 13.0, *)
 extension Publishers {

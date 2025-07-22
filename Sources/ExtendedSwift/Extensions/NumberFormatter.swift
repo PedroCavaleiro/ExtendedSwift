@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// A collection of extensions for `NumberFormatter` to provide commonly used configurations.
 extension NumberFormatter {
+
+    /// A NumberFormatter configured for decimal numbers with a maximum of 3 fraction digits.
     public static var decimalFormatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0
@@ -15,4 +18,5 @@ extension NumberFormatter {
         formatter.numberStyle = .decimal
         return formatter
     }
+
 }

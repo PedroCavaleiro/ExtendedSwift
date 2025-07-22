@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Extension to the Array class (any type)
 extension Array {
     
     /// Adds a new element to first position of the array

@@ -8,8 +8,11 @@
 
 import SwiftUI
 
+/// A view modifier that monitors the keyboard visibility state and provides it to the environment.
 @available(iOS 14.0, *)
 public struct KeyboardVisibility: ViewModifier {
+
+    /// A state object that monitors the keyboard visibility.
     @StateObject private var keyboardMonitor = KeyboardMonitor()
     
     /// Monitors the keyboard state
