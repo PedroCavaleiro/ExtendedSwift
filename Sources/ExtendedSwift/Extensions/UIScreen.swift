@@ -9,10 +9,12 @@ import Foundation
 #if canImport(UIKit)
 import UIKit
 
+/// A collection of extensions for the UIScreen type
 @available(iOS 13.0, *)
 extension UIScreen {
     
     /// Gets the current screen
+    /// - Returns: The current UIScreen instance if available, otherwise nil
     public static var current: UIScreen? {
         return UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }

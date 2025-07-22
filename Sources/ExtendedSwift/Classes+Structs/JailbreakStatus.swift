@@ -9,11 +9,15 @@
 
 import UIKit
 
+/// A class that provides a shared instance to check if the device is jailbroken.
 @MainActor
 public class JailbreakStatus {
+
     static let shared = JailbreakStatus()
+
     private(set) var isJailbroken: Bool = false
     
+    /// Checks the jailbreak status of the device and updates the `isJailbroken` property.
     public func checkJailbreakStatus() {
         isJailbroken = UIDevice.current.isJailBroken || UIDevice.current.isFridaDetected
     }

@@ -37,6 +37,7 @@ public func authenticateWithBiometrics(
 }
 
 /// Gets wether the device has biometrics available
+/// - Returns: A boolean indicating whether biometrics are available
 public func biometricsAvailable() -> Bool {
     let context = LAContext()
     var error: NSError?

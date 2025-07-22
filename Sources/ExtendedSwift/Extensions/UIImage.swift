@@ -9,6 +9,7 @@ import Foundation
 #if canImport(UIKit)
 import UIKit
 
+/// A collection of extensions for the UIImage type
 extension UIImage {
     
     /// Scales a `UIImage` to a size

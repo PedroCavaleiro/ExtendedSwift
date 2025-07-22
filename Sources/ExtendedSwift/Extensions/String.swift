@@ -11,6 +11,7 @@ import CommonCrypto
 import UIKit
 #endif
 
+/// A collection of extensions for the String type
 @available(iOS 13.0, *)
 @available(macOS 10.15, *)
 extension String {
@@ -54,6 +55,7 @@ extension String {
     #endif
 
     /// Trims whitespaces and newlines
+    /// - Returns: The trimmed string
     public func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
@@ -89,6 +91,12 @@ extension String {
         return digest
     }
     
+    
+    /// Converts a byte array result from cryptographic operations into a hexadecimal string representation.
+    /// - Parameters:
+    ///   - result: A pointer to the byte array containing the hash result
+    ///   - length: The length of the byte array
+    /// - Returns: A lowercase hexadecimal string representation of the byte array
     private func stringFromResult(result: UnsafeMutablePointer<CUnsignedChar>, length: Int) -> String {
         let hash = NSMutableString()
         for i in 0..<length {
