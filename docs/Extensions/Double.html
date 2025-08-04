@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Date Extension Reference</title>
+    <title>Double Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/Date" class="dashAnchor"></a>
-    <a title="Date Extension Reference"></a>
+    <a name="//apple_ref/swift/Extension/Double" class="dashAnchor"></a>
+    <a title="Double Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -31,7 +31,7 @@
         <img id="carat" src="../img/carat.png" alt=""/>
         <a href="../Extensions.html">Extensions</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        Foundation.Date Extension Reference
+        Swift.Double Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -154,16 +154,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Date</h1>
+            <h1>Double</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Date</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Double</span></code></pre>
 
                 </div>
               </div>
-            <p>An extension to the Date class</p>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -171,9 +170,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation4DateV13ExtendedSwiftE15toRfc3339StringSSyF"></a>
-                    <a name="//apple_ref/swift/Method/toRfc3339String()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV13ExtendedSwiftE15toRfc3339StringSSyF">toRfc3339String()</a>
+                    <a name="/s:Sd13ExtendedSwiftE5valueSdSS_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sd13ExtendedSwiftE5valueSdSS_tKcfc">init(value:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -181,45 +180,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets the date as a RFC3339 String</p>
+                        <p>Initializes a <code>Double</code> from a string, replacing commas with dots.
+Not specifying the parameter <code>value</code> will default to the constructor <code>init(_ value: String)</code> that will not replace commas with dots
+failing to parse the value in this situation.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the string cannot be converted to a <code>Double</code>.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">toRfc3339String</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The formatted string</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Foundation4DateV13ExtendedSwiftE9timestamp13inMilisecondss5Int64VSb_tF"></a>
-                    <a name="//apple_ref/swift/Method/timestamp(inMiliseconds:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV13ExtendedSwiftE9timestamp13inMilisecondss5Int64VSb_tF">timestamp(inMiliseconds:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets the timestamp in seconds or miliseconds</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">timestamp</span><span class="p">(</span><span class="nv">inMiliseconds</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int64</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -230,128 +205,17 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>inMiliseconds</em>
+                                <em>value</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Get the timestamp in seconds or miliseconds, defaults to true</p>
+                                  <p>The string to convert to a <code>Double</code>.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The timestamp</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Foundation4DateV13ExtendedSwiftE5sinceSSyF"></a>
-                    <a name="//apple_ref/swift/Method/since()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV13ExtendedSwiftE5sinceSSyF">since()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets a string for &ldquo;time since&rdquo;
-These are not translated automatically but the following translations can be used</p>
-
-<ul>
-<li>&ldquo;just now&rdquo;</li>
-<li>&ldquo;a minute ago&rdquo; or &ldquo;%lld minutes ago&rdquo;</li>
-<li>&ldquo;a hour ago&rdquo; or &ldquo;%lld hours ago&rdquo;</li>
-<li>&ldquo;yesterday&rdquo;</li>
-<li>&ldquo;%lld days ago&rdquo;</li>
-<li>&ldquo;last week&rdquo;</li>
-<li>&ldquo;last month&rdquo;</li>
-<li>&ldquo;%lld months ago&rdquo;</li>
-<li>&ldquo;last year&rdquo;</li>
-<li><p>&ldquo;%lld years ago&rdquo;</p></li>
-</ul>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">since</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The formatted string</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Foundation4DateV13ExtendedSwiftE7isTodaySbyF"></a>
-                    <a name="//apple_ref/swift/Method/isToday()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV13ExtendedSwiftE7isTodaySbyF">isToday()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Checks if the <code>Date</code> instance is today</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isToday</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True if the instance is today otherwise false</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10Foundation4DateV13ExtendedSwiftE11isYesterdaySbyF"></a>
-                    <a name="//apple_ref/swift/Method/isYesterday()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation4DateV13ExtendedSwiftE11isYesterdaySbyF">isYesterday()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Checks if the <code>Date</code> instance is yesterday</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isYesterday</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True if the instance is yesterday otherwise false</p>
                       </div>
                     </section>
                   </div>

@@ -14,7 +14,7 @@ extension Double {
     /// failing to parse the value in this situation.
     /// - Parameter value: The string to convert to a `Double`.
     /// - Throws: An error if the string cannot be converted to a `Double`.
-    init(value: String) throws {
+    public init(value: String) throws {
         if let doubleValue = Double(value.replacingOccurrences(of: ",", with: ".")) {
             self = doubleValue
         } else {
