@@ -8,9 +8,14 @@
 
 import CommonCrypto
 
+/// A collection of cryptographic algorithms used for hashing and HMAC operations.
+/// This enum provides access to various cryptographic algorithms, including MD5, SHA1, SHA224, SHA256, SHA384, and SHA512.
+/// Each case provides the corresponding CCHmacAlgorithm.
 public enum CryptoAlgorithm {
     case MD5, SHA1, SHA224, SHA256, SHA384, SHA512
 
+    /// Returns the CCHmacAlgorithm associated with the crypto algorithm.
+    /// - Returns: The CCHmacAlgorithm corresponding to the crypto algorithm.
     public var HMACAlgorithm: CCHmacAlgorithm {
         var result: Int = 0
         switch self {
@@ -23,7 +28,9 @@ public enum CryptoAlgorithm {
         }
         return CCHmacAlgorithm(result)
     }
-
+    
+    /// Returns the length of the digest for the crypto algorithm.
+    /// - Returns: The length of the digest in bytes.
     public var digestLength: Int {
         var result: Int32 = 0
         switch self {

@@ -9,6 +9,9 @@
 import Foundation
 import SwiftUI
 
+/// A view modifier that conditionally displays a placeholder view when a certain condition is met.
+/// - Parameter showPlaceholder: A boolean value that determines whether the placeholder should be shown.
+/// - Parameter placeholder: A closure that returns the placeholder view to be displayed.
 @available(iOS 13.0, *)
 public struct PlaceholderModifier<Placeholder: View>: ViewModifier {
     public var showPlaceholder: Bool

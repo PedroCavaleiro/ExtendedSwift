@@ -11,13 +11,16 @@ import LocalAuthentication
 import UIKit
 #endif
 
+/// A collection of extensions for the View type
 extension View {
     
     /// Gets wether the device has biometrics available
+    /// - Returns: A boolean indicating whether biometrics are available
     public var hasBiometricsAvailable: Bool { return biometricsAvailable() }
     
     /// Gets wether the deivce has FaceID or not
     /// It's not possible to determine if a simulator or preview has FaceID (check comment inside function)
+    /// - Returns: A boolean indicating whether FaceID is available
     public var hasFaceID: Bool {
         let context = LAContext()
         
@@ -31,15 +34,20 @@ extension View {
         return context.biometryType == .faceID
     }
     
+    #if canImport(UIKit)
     /// Gets the user interface idiom (iphone or ipad)
+    /// - Returns: The UIUserInterfaceIdiom of the current device
     public var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    #endif
         
     /// Gets wether the app is running in a XCode preview or not
+    /// - Returns: A boolean indicating whether the app is running in a XCode preview
     public var runningAsPreview: Bool {
         return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" ? true : false
     }
 
     /// Gets wether the app is running in a sumulator or real device
+    /// - Returns: A boolean indicating whether the app is running in a simulator
     public var isRunningOnSimulator: Bool {
         #if targetEnvironment(simulator)
         return true
@@ -48,14 +56,15 @@ extension View {
         #endif
     }
     
+    #if canImport(UIKit)
     /// Observes the change in the color scheme from a SwiftUI view
     /// - Parameter onChange: Function to execute when the color changes (sends the new ColorScheme)
+    /// - Returns: A modified view that observes the color scheme changes
     @available(iOS 17.0, *)
     public func observeColorScheme(onChange: @escaping (ColorScheme) -> Void) -> some View {
         self.modifier(ColorSchemeObserver(onChange: onChange))
     }
-    
-    #if canImport(UIKit)
+
     /// Gets the safeArea for the view
     /// This allows to be accessible from the View struct
     ///
@@ -116,6 +125,7 @@ extension View {
     /// - Parameters:
     ///   - conditional: The boolean condition
     ///   - content: The content to modify
+    /// - Returns: A TupleView containing the original view and the modified content if the condition is true
     public func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> TupleView<(Self?, Content?)> {
         if conditional {
             return TupleView((nil, content(self)))
@@ -125,12 +135,17 @@ extension View {
     }
 
     /// Executes a action on render, it will run if the view is re-rendered
+    /// - Parameters:
+    ///   - action: The action to execute
+    /// - Returns: The view itself, allowing for chaining
     public func `exec`(action: @escaping (() -> ())) -> (Self?) {
         action()
         return self
     }
     
     /// No different than *onAppear* but helps to decide that is a "initial load" action
+    /// - Parameter loadAction: The action to execute when the view appears
+    /// - Returns: The view itself, allowing for chaining
     public func onLoad(run loadAction: @escaping () -> Void) -> some View {
         self
             .onAppear {
@@ -150,6 +165,10 @@ extension View {
         self.modifier(PlaceholderModifier(showPlaceholder: showPlaceholder, placeholder: placeholder))
     }
     
+    #if canImport(UIKit)
+    /// Adds an offset to the view based on a binding value
+    /// - Parameter offset: A binding to a CGFloat that will be used to set the offset
+    /// - Returns: The view with the offset applied
     @available(iOS 15.0, *)
     public func offset(offset: Binding<CGFloat>) -> some View {
         return self
@@ -163,5 +182,6 @@ extension View {
                 })
             }
     }
+    #endif
 
 }

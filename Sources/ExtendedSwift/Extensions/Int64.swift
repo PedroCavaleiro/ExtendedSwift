@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An extension to the `Int64` type
 extension Int64 {
     
     /// Converts a timestamp to a Date

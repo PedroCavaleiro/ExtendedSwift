@@ -8,6 +8,9 @@
 import Network
 import SwiftUI
 
+/// A class that monitors network connectivity status using NWPathMonitor.
+/// It provides a published property `isConnected` that indicates whether the device is currently connected to the network.
+/// This class is designed to be used in SwiftUI applications, allowing views to react to changes in network connectivity.
 @MainActor
 @available(iOS 18.0, *)
 public final class NetworkMonitor: ObservableObject {

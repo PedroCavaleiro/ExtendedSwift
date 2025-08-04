@@ -10,9 +10,11 @@ import MachO
 #if canImport(UIKit)
 import UIKit
 
+/// A collection of extensions for the UIDevice type
 extension UIDevice {
     
     /// Gets wether the app is running in a sumulator or real device
+    /// - Returns: A boolean indicating whether the app is running in a simulator
     public var isRunningOnSimulator: Bool {
         #if targetEnvironment(simulator)
         return true
@@ -21,6 +23,8 @@ extension UIDevice {
         #endif
     }
     
+    /// Checks if the device is jailbroken
+    /// - Returns: A boolean indicating whether the device is jailbroken
     public var isJailBroken: Bool {
         get {
             if isRunningOnSimulator { return false }
@@ -31,6 +35,8 @@ extension UIDevice {
         }
     }
     
+    /// Checks if the device is running Frida
+    /// - Returns: A boolean indicating whether Frida is detected
     public var isFridaDetected: Bool {
         get {
             if JailBrokenHelper.checkDYLD() { return true }

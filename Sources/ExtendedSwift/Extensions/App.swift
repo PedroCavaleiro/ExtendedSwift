@@ -9,6 +9,7 @@ import SwiftUI
 #if canImport(UIKit)
 import UIKit
 
+/// Extension to the App class
 @available(iOS 14.0, *)
 extension App {
     
