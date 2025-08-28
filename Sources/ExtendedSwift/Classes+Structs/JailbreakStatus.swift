@@ -15,7 +15,7 @@ public class JailbreakStatus {
 
     static let shared = JailbreakStatus()
 
-    private(set) var isJailbroken: Bool = false
+    private(set) public var isJailbroken: Bool = false
     
     /// Checks the jailbreak status of the device and updates the `isJailbroken` property.
     /// - Note: If the app is running on a macOS `isJailbroken` will always be false
