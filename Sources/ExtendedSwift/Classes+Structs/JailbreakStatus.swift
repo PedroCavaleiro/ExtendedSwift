@@ -26,8 +26,9 @@ public class JailbreakStatus {
             let isRunningOniPadMac = ProcessInfo.processInfo.isiOSAppOnMac
             if isRunningOniPadMac {
                 isJailbroken = false
+            } else {
+                isJailbroken = UIDevice.current.isJailBroken || UIDevice.current.isFridaDetected
             }
-            isJailbroken = UIDevice.current.isJailBroken || UIDevice.current.isFridaDetected
         #endif
     }
 }
