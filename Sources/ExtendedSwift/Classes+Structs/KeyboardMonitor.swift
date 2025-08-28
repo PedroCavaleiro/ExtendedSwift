@@ -12,8 +12,6 @@ import Combine
 /// A class that monitors the keyboard visibility state in iOS applications.
 /// - Parameters:
 ///   - isKeyboardShowing: A published property that indicates whether the keyboard is currently visible.
-@available(macOS 10.15, *)
-@available(iOS 13.0, *)
 public final class KeyboardMonitor: ObservableObject {
     @Published var isKeyboardShowing: Bool = false
     private var cancellables = Set<AnyCancellable>()

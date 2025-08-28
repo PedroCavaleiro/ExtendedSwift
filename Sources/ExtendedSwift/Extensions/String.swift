@@ -12,8 +12,6 @@ import UIKit
 #endif
 
 /// A collection of extensions for the String type
-@available(iOS 13.0, *)
-@available(macOS 10.15, *)
 extension String {
     
     /// Checks if the email address is valid

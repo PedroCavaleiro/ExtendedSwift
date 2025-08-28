@@ -13,8 +13,6 @@ import SwiftUI
 ///   - data: The collection to iterate over.
 ///   - id: A key path to the unique identifier for each element in the collection.
 ///   - content: A closure that takes the index and the element and returns a view.
-@available(iOS 13.0, *)
-@available(macOS 10.15, *)
 public struct ForEachWithIndex<Data: RandomAccessCollection, ID: Hashable, Content: View>: View {
     public var data: Data
     public var id: KeyPath<Data.Element, ID>

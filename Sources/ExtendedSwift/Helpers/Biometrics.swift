@@ -13,8 +13,6 @@ import CryptoKit
 /// - Parameters:
 ///  - reason: The reason for the authentication, defaults to "Authenticate to continue
 ///  - callback: The callback for the authentication, the callback gives a boolean indicating if authentication was successful or not
-@available(macOS 15.0, *)
-@available(iOS 18.0, *)
 @preconcurrency
 public func authenticateWithBiometrics(
     reason: String = "Authenticate to continue",

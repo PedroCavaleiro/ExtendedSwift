@@ -8,7 +8,6 @@
 import SwiftUI
 
 /// A custom environment key to track whether the keyboard is currently showing.
-@available(iOS 13.0, *)
 extension EnvironmentValues {
     /// A key to store the keyboard showing state in the environment.
     public var keyboardShowing: Bool {

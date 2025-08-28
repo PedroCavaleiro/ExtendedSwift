@@ -11,7 +11,6 @@ import Foundation
 import UIKit
 
 /// A collection of extensions for the UIScreen type
-@available(iOS 13.0, *)
 public extension UIApplication {
     
     /// Gets the current window

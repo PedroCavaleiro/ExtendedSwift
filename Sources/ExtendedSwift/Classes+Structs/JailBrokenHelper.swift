@@ -13,7 +13,6 @@ import UIKit
 
 /// A helper class to detect if the device is jailbroken by checking for Cydia, suspicious apps, system paths, and dynamic libraries.
 /// It also checks if Frida is running, which is a common tool used in jailbroken devices.
-@available(iOS 13.0, *)
 internal struct JailBrokenHelper {
     
     /// Checks if Cydia is installed

@@ -10,7 +10,6 @@ import SwiftUI
 import UIKit
 
 /// Extension to the App class
-@available(iOS 14.0, *)
 extension App {
     
     /// Gets the safeArea for the view

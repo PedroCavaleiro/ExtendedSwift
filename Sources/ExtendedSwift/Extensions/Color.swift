@@ -8,8 +8,6 @@
 import SwiftUI
 
 /// An extension to the SwiftUI Color
-@available(iOS 13.0, *)
-@available(macOS 10.15, *)
 extension Color {
     
     /// Creates a new SwiftUI color based of a HEX color

@@ -9,8 +9,6 @@ import CryptoKit
 import Foundation
 
 /// A utility class for security-related operations
-@available(iOS 13.0, *)
-@available(macOS 10.15, *)
 public class Security {
     
     /// Hashes a string using SHA256
