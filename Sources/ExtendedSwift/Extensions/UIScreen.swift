@@ -11,11 +11,11 @@ import UIKit
 
 /// A collection of extensions for the UIScreen type
 @available(iOS 13.0, *)
-extension UIScreen {
+public extension UIScreen {
     
     /// Gets the current screen
     /// - Returns: The current UIScreen instance if available, otherwise nil
-    public static var current: UIScreen? {
+    static var current: UIScreen? {
         return UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }
             .flatMap { $0.windows }
