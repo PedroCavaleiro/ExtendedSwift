@@ -13,7 +13,7 @@ import UIKit
 @MainActor
 public class JailbreakStatus {
 
-    static let shared = JailbreakStatus()
+    public static let shared = JailbreakStatus()
 
     private(set) public var isJailbroken: Bool = false
     
