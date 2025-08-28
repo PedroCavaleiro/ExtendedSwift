@@ -18,8 +18,13 @@ public class JailbreakStatus {
     private(set) var isJailbroken: Bool = false
     
     /// Checks the jailbreak status of the device and updates the `isJailbroken` property.
+    /// - Note: If the app is running on a macOS `isJailbroken` will always be false
     public func checkJailbreakStatus() {
-        isJailbroken = UIDevice.current.isJailBroken || UIDevice.current.isFridaDetected
+        #if os(macOS)
+            isJailbroken = false
+        #else
+            isJailbroken = UIDevice.current.isJailBroken || UIDevice.current.isFridaDetected
+        #endif
     }
 }
 
